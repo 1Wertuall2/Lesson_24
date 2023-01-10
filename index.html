@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Lesson 24 JS</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230110124048">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title">
+					HOMEWORK LESSON №24
+				</h1>
+				<h2 class="header__subtitle">
+					JAVASCRIPT
+				</h2>
+			</div>
+		</header>
+		<main class="page">
+			<section class="functions">
+				<div class="functions__container">
+					<h3 class="functions__title title">
+						Функции в JAVASCRIPT. Стрелочные функции, рекурсия, планирование: setTimeout и setInterval.
+					</h3>
+					<div class="functions__image">
+						<picture><source srcset="img/functions.webp" type="image/webp"><img src="img/functions.jpg" alt="Image"></picture>
+					</div>
+					<div class="functions__option option">
+						<h3 class="option__title">
+							Задача №1
+						</h3>
+						<p>
+							function showName() { <br>
+							console.log('Вася!');<br>
+							} <br>
+							setTimeout(showName, 0); <br>
+							console.log('Коля!');
+						</p>
+						<p>
+							Задача 1 - планирование вызова функций setTimeout выведет функцию showName с задержкой и в консоли первым выведеться имя Коля.
+						</p>
+					</div>
+					<div class="functions__option option">
+						<h3 class="option__title">
+							Задача №2
+						</h3>
+						<p>
+							showMessage(); <br>
+							function showMessage() {<br>
+							console.log('Сообщение');<br>
+							}
+						</p>
+						<p>
+							Задача 2 - функцию можно запускать как перед, так и после обьявления, так что функция вызвана правильно.
+						</p>
+					</div>
+					<div class="functions__option option">
+						<h3 class="option__title">
+							Задача №3
+						</h3>
+						<p>
+							showMessage();<br>
+							let showMessage = function() {<br>
+							console.log('Сообщение');<br>
+							}
+						</p>
+						<p>
+							<span>
+								Задача 3 - функция вызвана не верно, так как функция вызваная до обьявления переменной выведет ошибку, так же в конце переменной нужно поставить ;
+							</span>
+						</p>
+					</div>
+					<div class="functions__option option">
+						<h3 class="option__title">
+							Задача №4
+						</h3>
+						<p>
+							let showMessage;<br>
+							if (2 > 1) {<br>
+							showMessage = function() {<br>
+							console.log('Сообщение');<br>
+							}
+							} <br>
+							showMessage();
+						</p>
+						<p>
+							<span>
+								Задача 4 - решить проблему поможет вызов переменной за пределами блока и присвоив ей функцию.
+							</span>
+						</p>
+					</div>
+				</div>
+			</section>
+			<section class="arrays">
+				<div class="arrays__container">
+					<h3 class="arrays__title title">
+						Массивы в JAVASCRIPT. Методы массивов. Редактирование, поиск, сортировка.
+					</h3>
+					<div class="arrays__image">
+						<picture><source srcset="img/arrays1.webp" type="image/webp"><img src="img/arrays1.jpg" alt="Image"></picture>
+						<picture><source srcset="img/arrays2.webp" type="image/webp"><img src="img/arrays2.jpg" alt="Image"></picture>
+					</div>
+					<div class="arrays__option option">
+						<h3 class="option__title">
+							Задача №1
+						</h3>
+						<p>
+							let arr = ['Ваня', 'Иштван', 'Оля',];<br>
+							let newArr = arr;<br>
+							newArr.push('Петя');<br>
+							console.log(arr.length);
+						</p>
+						<p>
+							Задача 1 - выведет в консоли значение 4, так как метод push добавляет элемент в конец массива.
+						</p>
+					</div>
+					<div class="arrays__option option">
+						<h3 class="option__title">
+							Задача №2
+						</h3>
+						<p>
+							let arrs = ['Ваня', 'Иштван',];<br>
+							console.log(arrs);<br>
+							arrs.push('Оля');<br>
+							console.log(arrs);<br>
+							arrs.splice(1, 1, 'Петя',)<br>
+							console.log(arrs);<br>
+							let arr = arrs.shift();<br>
+							console.log(arr);<br>
+							arrs.unshift('Маша','Паша')<br>
+							console.log(arrs);
+						</p>
+						<p>
+							Задача 2 - данные в консоли <br>
+							(2) ['Ваня', 'Иштван']<br>
+							(3) ['Ваня', 'Иштван', 'Оля']<br>
+							(3) ['Ваня', 'Петя', 'Оля']<br>
+							(2) ['Петя', 'Оля']<br>
+							Ваня<br>
+							(4) ['Маша', 'Паша', 'Петя', 'Оля']
+						</p>
+					</div>
+					<div class="arrays__option option">
+						<h3 class="option__title">
+							Задача №3
+						</h3>
+						<p>
+							let arr = ['Ваня', 'Иштван', 'Оля',];<br>
+							console.log(arr);<br>
+							let removed = arr.splice(1, 1);<br>
+							console.log(removed);
+						</p>
+						<p>
+							Задача 3 - данные в консоли <br>
+							(3) ['Ваня', 'Иштван', 'Оля'] <br>
+							['Иштван']
+						</p>
+					</div>
+					<div class="arrays__option option">
+						<h3 class="option__title">
+							Задача №4
+						</h3>
+						<p>
+							let str = 'Ваня,Иштван,Оля';<br>
+							let arr = str.split(',');<br>
+							console.log(arr);
+						</p>
+						<p>
+							Задача 4 - данные в консоли <br>
+							(3) ['Ваня', 'Иштван', 'Оля']
+						</p>
+					</div>
+					<div class="arrays__option option">
+						<h3 class="option__title">
+							Задача №5
+						</h3>
+						<p>
+							let arr = [9, 2, 8,];<br>
+							let reduseValue = arrTwo.reduce(function (previousValue, item, index, array){<br>
+							console.log(previousValue);<br>
+							});
+						</p>
+						<p>
+							<span>
+								Задача 5 - имя переменной задано не верно, из-за этого в консоль выводит ошибку. Если имя задать правильно, то выведеться число 9.
+							</span>
+						</p>
+					</div>
+				</div>
+			</section>
+			<section class="dom">
+				<div class="dom__container">
+					<h3 class="dom__title title">
+						JavaScript Document object model (DOM). Изменение HTML CSS. Атрибуты и свойства. Окружение.
+					</h3>
+					<div class="dom__image">
+						<picture><source srcset="img/dom1.webp" type="image/webp"><img src="img/dom1.jpg" alt="Image"></picture>
+						<picture><source srcset="img/dom2.webp" type="image/webp"><img src="img/dom2.jpg" alt="Image"></picture>
+					</div>
+					<div class="dom__option option">
+						<h3 class="option__title">
+							Задача №1
+						</h3>
+						<div class="option__selector" data-say-hi="yes">Привет!</div>
+						<p>
+							const optionSelector = document.querySelector('.option__selector'); <br>
+							console.log(optionSelector);<br>
+							const optionAttr = domSelector.getAttribute('data-say-hi'); <br>
+							console.log(optionAttr);
+						</p>
+						<p>
+							Задача 1 - выведет в консоли значение yes.
+						</p>
+					</div>
+					<div class="dom__option option">
+						<h3 class="option__title">
+							Задача №2
+						</h3>
+						<ul class="option__lists">
+							<li class="option__list">Корчи</li>
+							<li class="option__list">Йончи</li>
+						</ul>
+						<p>
+							const optionList = document.querySelectorAll('li');<br>
+							console.log(optionList[1]);
+						</p>
+						<p>
+							Задача 2 - данные в консоли.
+						</p>
+					</div>
+					<div class="dom__option option">
+						<h3 class="option__title">
+							Задача №3
+						</h3>
+						<div class="option__inner">
+							<div class="like"></div>
+							<div class="subscribe"></div>
+							<div class="like subscribe"></div>
+						</div>
+						<p>
+							const optionInner = document.querySelectorAll('.like');
+							console.log(optionInner);
+						</p>
+						<p>
+							Задача 3 - данные в консоли.
+						</p>
+					</div>
+					<div class="dom__option option">
+						<h3 class="option__title">
+							Задача №4
+						</h3>
+						<ul class="option__puncts">
+							<li>Пункт №1</li>
+							<li>Пункт №2</li>
+						</ul>
+						<p>
+							const list = document.querySelectorAll('.option__puncts');<br>
+							list.insertAdjacentHTML(<br>
+							'beforeend',<br>
+							'li Текст /li'<br>
+							);
+						</p>
+						<p>
+							Задача 4 - querySelectorAll вызовет ошибку, но если заменить на querySelector, то 'li Текст /li' будет выведен вконце списка.
+						</p>
+					</div>
+				</div>
+			</section>
+			<section class="scroll">
+				<div class="scroll__container">
+					<h3 class="scroll__title title">
+						JavaScript размеры прокрутка и координаты элементов на странице и окна браузера.
+					</h3>
+					<div class="scroll__image">
+						<picture><source srcset="img/scroll.webp" type="image/webp"><img src="img/scroll.jpg" alt="Image"></picture>
+					</div>
+					<div class="scroll__option option">
+						<h3 class="option__title">
+							Задача №1
+						</h3>
+						<p>
+							const mainElement = document.documentElement;<br>
+							const mainElementWidth = mainElement.clientWidth; <br>
+							console.log(mainElementWidth); <br>
+							<br>
+							const windowWidth = window.innerWidth;<br>
+							console.log(windowWidth);<br>
+							<br>
+							const scrollWidth = windowWidth - mainElementWidth;<br>
+							console.log(scrollWidth);
+						</p>
+						<p>
+							Задача 1 - данные в консоли. <br>
+							1136 <br>
+							1157 <br>
+							21
+						</p>
+					</div>
+					<div class="scroll__option option">
+						<h3 class="option__title">
+							Задача №2
+						</h3>
+						<p>
+							function scrollPage() {<br>
+							window.scrollTo({<br>
+							top:100,<br>
+							left:0,<br>
+							behavior:'smooth'<br>
+							})<br>
+							}<br>
+							setTimeout(scrollPage, 1000);
+						</p>
+					</div>
+					<div class="scroll__option option">
+						<h3 class="option__title">
+							Задача №3
+						</h3>
+						<p>
+							const itemOneElement = document.querySelector('.header__title');<br>
+							const itemTwoElement = document.querySelector('.arrays__image');<br>
+							const itemThreeElement = document.querySelector('.scroll__container');<br>
+							<br>
+							const itemOneCoords = itemOneElement.getBoundingClientRect();<br>
+							console.log(itemOneCoords);<br>
+							<br>
+							const itemTwoCoords = itemTwoElement.getBoundingClientRect();<br>
+							console.log(itemTwoCoords);<br>
+							<br>
+							const itemThreeCoords = itemThreeElement.getBoundingClientRect();<br>
+							console.log(itemThreeCoords);
+						</p>
+						<p>
+							Задача 3 - данные в консоли.
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+	<script src="js/app.min.js?_v=20230110124048"></script>
+</body>
+
+</html>
